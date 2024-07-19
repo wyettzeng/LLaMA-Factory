@@ -1,4 +1,14 @@
 {
+  "evol": {
+    "file_name": "evol_llama_factory.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },
