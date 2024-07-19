@@ -1,6 +1,9 @@
 # Custom dataset
 data/evol_llama_factory.json
 
+# models
+models/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
