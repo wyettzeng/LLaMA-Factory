@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct
+model_name_or_path: mistralai/Mistral-7B-Instruct-v0.2
 
 ### method
 stage: dpo
@@ -17,7 +17,7 @@ overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: saves/ds_2_instruct/lora/dpo
+output_dir: saves/mistral_2_instruct/lora/dpo
 logging_steps: 10
 save_steps: 500
 plot_loss: true
