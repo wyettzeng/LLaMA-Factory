@@ -2,12 +2,12 @@
 
 ### model
 model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
-adapter_name_or_path: saves/llama_3_instruct/lora/dpo
+adapter_name_or_path: saves/llama_3_instruct/lora/dpo/checkpoint-1000/
 template: empty
 finetuning_type: lora
 
 ### export
-export_dir: models/llama3_instruct_dpo
+export_dir: models/llama3_instruct_dpo_checkpoint
 export_size: 3
 export_device: cpu
 export_legacy_format: false
