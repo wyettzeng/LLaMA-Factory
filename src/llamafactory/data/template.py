@@ -42,6 +42,8 @@ class Template:
     default_system: str
     stop_words: List[str]
     image_token: str
+    vision_start_token: str
+    vision_end_token: str
     efficient_eos: bool
     replace_eos: bool
 
@@ -206,6 +208,8 @@ def _register_template(
     default_system: str = "",
     stop_words: Sequence[str] = [],
     image_token: str = "<image>",
+    vision_start_token: str = "<|vision_start|>",
+    vision_end_token: str = "<|vision_end|>",
     efficient_eos: bool = False,
     replace_eos: bool = False,
 ) -> None:
@@ -255,6 +259,8 @@ def _register_template(
         default_system=default_system,
         stop_words=stop_words,
         image_token=image_token,
+        vision_start_token=vision_start_token,
+        vision_end_token=vision_end_token,
         efficient_eos=efficient_eos,
         replace_eos=replace_eos,
     )
@@ -310,14 +316,15 @@ def _get_jinja_template(template: "Template", tokenizer: "PreTrainedTokenizer") 
         jinja_template += "{% set system_message = '" + _jinja_escape(template.default_system) + "' %}"
 
     jinja_template += (
-        "{% if messages[0]['role'] == 'system' %}{% set system_message = messages[0]['content'] %}{% endif %}"
+        "{% if messages[0]['role'] == 'system' %}{% set loop_messages = messages[1:] %}"
+        "{% set system_message = messages[0]['content'] %}{% else %}{% set loop_messages = messages %}{% endif %}"
     )
 
     system_message = _convert_slots_to_jinja(template.format_system.apply(), tokenizer, placeholder="system_message")
     if not isinstance(template, Llama2Template):
         jinja_template += "{% if system_message is defined %}{{ " + system_message + " }}{% endif %}"
 
-    jinja_template += "{% for message in messages %}"
+    jinja_template += "{% for message in loop_messages %}"
     jinja_template += "{% set content = message['content'] %}"
     if isinstance(template, Llama2Template):
         jinja_template += "{% if loop.index0 == 0 and system_message is defined %}"
@@ -578,6 +585,7 @@ _register_template(
 _register_template(
     name="deepseek",
     format_user=StringFormatter(slots=["User: {{content}}\n\nAssistant:"]),
+    format_system=StringFormatter(slots=["{{content}}\n\n"]),
     format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
 )
 
@@ -585,14 +593,14 @@ _register_template(
 _register_template(
     name="deepseekcoder",
     format_user=StringFormatter(slots=["### Instruction:\n{{content}}\n### Response:"]),
-    format_assistant=StringFormatter(slots=["\n{{content}}\n"]),
+    format_assistant=StringFormatter(slots=["\n{{content}}\n<|EOT|>"]),
     format_separator=EmptyFormatter(slots=["\n"]),
     format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
     default_system=(
-        "You are an AI programming assistant, utilizing the Deepseek Coder model, "
-        "developed by Deepseek Company, and you only answer questions related to computer science. "
+        "You are an AI programming assistant, utilizing the DeepSeek Coder model, "
+        "developed by DeepSeek Company, and you only answer questions related to computer science. "
         "For politically sensitive questions, security and privacy issues, "
-        "and other non-computer science questions, you will refuse to answer\n"
+        "and other non-computer science questions, you will refuse to answer.\n"
     ),
 )
 
@@ -776,6 +784,35 @@ _register_template(
     format_observation=StringFormatter(slots=["<|im_start|>tool\n{{content}}<|im_end|>\n<|im_start|>assistant\n"]),
     format_separator=EmptyFormatter(slots=["\n"]),
     default_system="You are a helpful assistant.",
+    stop_words=["<|im_end|>"],
+    replace_eos=True,
+)
+
+
+_register_template(
+    name="qwen2vl",
+    format_user=StringFormatter(slots=["<|im_start|>user\n{{content}}<|im_end|>\n<|im_start|>assistant\n"]),
+    format_system=StringFormatter(slots=["<|im_start|>system\n{{content}}<|im_end|>\n"]),
+    format_observation=StringFormatter(slots=["<|im_start|>tool\n{{content}}<|im_end|>\n<|im_start|>assistant\n"]),
+    format_separator=EmptyFormatter(slots=["\n"]),
+    default_system="You are a helpful assistant.",
+    image_token="<|image_pad|>",
+    vision_start_token="<|vision_start|>",
+    vision_end_token="<|vision_end|>",
+    stop_words=["<|im_end|>"],
+    replace_eos=True,
+)
+
+
+_register_template(
+    name="sailor",
+    format_user=StringFormatter(slots=["<|im_start|>question\n{{content}}<|im_end|>\n<|im_start|>answer\n"]),
+    format_system=StringFormatter(slots=["<|im_start|>system\n{{content}}<|im_end|>\n"]),
+    format_separator=EmptyFormatter(slots=["\n"]),
+    default_system=(
+        "You are an AI assistant named Sailor created by Sea AI Lab. "
+        "Your answer should be friendly, unbiased, faithful, informative and detailed."
+    ),
     stop_words=["<|im_end|>"],
     replace_eos=True,
 )

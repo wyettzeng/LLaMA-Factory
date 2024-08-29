@@ -48,6 +48,20 @@
       "assistant_tag": "assistant"
     }
   },
+  "qwen2vl_demo": {
+    "file_name": "qwen2vl_demo.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant"
+    }
+  },
   "alpaca_en": {
     "hf_hub_url": "llamafactory/alpaca_en",
     "ms_hub_url": "llamafactory/alpaca_en"
@@ -275,6 +289,13 @@
   "magpie_pro_300k": {
     "hf_hub_url": "Magpie-Align/Magpie-Pro-300K-Filtered",
     "formatting": "sharegpt"
+  },
+  "magpie_ultra": {
+    "hf_hub_url": "argilla/magpie-ultra-v0.1",
+    "columns": {
+      "prompt": "instruction",
+      "response": "response"
+    }
   },
   "web_instruct": {
     "hf_hub_url": "TIGER-Lab/WebInstructSub",
