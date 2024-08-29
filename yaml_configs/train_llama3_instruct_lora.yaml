@@ -18,15 +18,15 @@ preprocessing_num_workers: 16
 
 ### output
 output_dir: saves/llama_3_instruct/lora/dpo
-logging_steps: 10
-save_steps: 500
+logging_steps: 2
+save_steps: 300
 plot_loss: true
 overwrite_output_dir: true
 
 ### train
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 64
-learning_rate: 7.0e-7
+learning_rate: 5.0e-7
 num_train_epochs: 3.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
@@ -38,3 +38,7 @@ val_size: 0.1
 per_device_eval_batch_size: 1
 eval_strategy: steps
 eval_steps: 500
+
+# wandb
+report_to: wandb
+run_name: llama3_instruct_lora # optional
