@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: mistralai/Mistral-7B-Instruct-v0.2
+model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
 
 ### method
 stage: dpo
@@ -10,14 +10,14 @@ pref_beta: 0.01
 pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: evol
-template: mistral
+dataset: evol_dpo
+template: llama3
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: saves/mistral_2_instruct/lora/dpo
+output_dir: saves/llama_3_instruct/lora/dpo
 logging_steps: 2
 save_steps: 300
 plot_loss: true
@@ -41,4 +41,4 @@ eval_steps: 100
 
 # wandb
 report_to: wandb
-run_name: mistral2_instruct_lora # optional
+run_name: llama3_instruct_lora # optional

@@ -1,6 +1,6 @@
 {
-  "evol": {
-    "file_name": "evol_llama_factory.json",
+  "evol_dpo": {
+    "file_name": "evol_llama_factory_dpo.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -8,6 +8,9 @@
       "chosen": "chosen",
       "rejected": "rejected"
     }
+  },
+  "evol_sft": {
+    "file_name": "evol_llama_factory_sft.json"
   },
   "identity": {
     "file_name": "identity.json"
