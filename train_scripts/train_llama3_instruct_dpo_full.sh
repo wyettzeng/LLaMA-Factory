@@ -1,2 +1,2 @@
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-llamafactory-cli train yaml_configs/train_llama3_instruct_dpo_full.yaml
+llamafactory-cli train yaml_configs/train_llama3_instruct_dpo_full.yaml | tee llama3_dpo_full.log
