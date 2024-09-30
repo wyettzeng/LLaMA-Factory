@@ -10,14 +10,14 @@ pref_beta: 0.01
 pref_loss: apo_zero  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: evol_dpo
+dataset: evol_llama3_instruct_3
 template: llama3
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: saves/llama_3_instruct/full/apo
+output_dir: saves/llama_3_instruct/full/apo/3/
 logging_steps: 2
 save_steps: 350
 plot_loss: true
@@ -41,4 +41,4 @@ eval_steps: 100
 
 # wandb
 report_to: wandb
-run_name: llama3_instruct_apo_full # optional
+run_name: llama3_instruct_apo_full_3 # optional

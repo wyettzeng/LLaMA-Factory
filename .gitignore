@@ -1,5 +1,5 @@
 # Custom dataset
-data/evol_llama_factory*
+data/evol*
 
 # models
 models/*

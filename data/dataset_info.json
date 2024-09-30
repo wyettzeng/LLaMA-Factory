@@ -9,6 +9,36 @@
       "rejected": "rejected"
     }
   },
+  "evol_llama3_instruct_1": {
+    "file_name": "evol_llama3_instruct_1.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "evol_llama3_instruct_3": {
+    "file_name": "evol_llama3_instruct_3.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "evol_llama3_instruct_5": {
+    "file_name": "evol_llama3_instruct_5.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "evol_sft": {
     "file_name": "evol_llama_factory_sft.json"
   },
