@@ -10,16 +10,16 @@ pref_beta: 0.01
 pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: evol_dpo
+dataset: evol_llama3_instruct_3
 template: llama3
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: saves/llama_3_instruct/full/dpo
+output_dir: /data/wyett/trained/llama_3_instruct/full/dpo/3/
 logging_steps: 2
-save_steps: 350
+# save_steps: 350
 plot_loss: true
 overwrite_output_dir: true
 
@@ -27,18 +27,18 @@ overwrite_output_dir: true
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 32
 learning_rate: 5.0e-7
-num_train_epochs: 3.0
+num_train_epochs: 1.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true
 ddp_timeout: 480000000
 
 ### eval
-val_size: 0.1
+val_size: 0.025
 per_device_eval_batch_size: 1
 eval_strategy: steps
-eval_steps: 100
+eval_steps: 25
 
 # wandb
 report_to: wandb
-run_name: llama3_instruct_dpo_full # optional
+run_name: llama3_instruct_dpo_full_3 # optional
