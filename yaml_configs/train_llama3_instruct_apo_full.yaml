@@ -17,7 +17,7 @@ overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: /data/trained/llama_3_instruct/full/apo/1/
+output_dir: /data/wyett/trained/llama_3_instruct/full/apo_zero/1/
 logging_steps: 2
 # save_steps: 350
 plot_loss: true
@@ -41,4 +41,4 @@ eval_steps: 25
 
 # wandb
 report_to: wandb
-run_name: llama3_instruct_apo_full_1 # optional
+run_name: llama3_instruct_apo_zero_full_1 # optional
