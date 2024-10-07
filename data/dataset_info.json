@@ -39,6 +39,36 @@
       "rejected": "rejected"
     }
   },
+  "evol_mistral3_instruct_1": {
+    "file_name": "evol_mistral_instruct_v3_1.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "evol_mistral3_instruct_3": {
+    "file_name": "evol_mistral_instruct_v3_3.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "evol_mistral3_instruct_5": {
+    "file_name": "evol_mistral_instruct_v3_5.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "evol_sft": {
     "file_name": "evol_llama_factory_sft.json"
   },

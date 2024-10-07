@@ -10,16 +10,16 @@ pref_beta: 0.01
 pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: evol_dpo
+dataset: evol_mistral3_instruct_3
 template: mistral
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: saves/mistral_3_instruct/full/dpo
+output_dir: /data/wyett/trained/mistral_3_instruct/full/dpo/3/
 logging_steps: 2
-save_steps: 350
+# save_steps: 350
 plot_loss: true
 overwrite_output_dir: true
 
@@ -34,11 +34,11 @@ bf16: true
 ddp_timeout: 480000000
 
 ### eval
-val_size: 0.1
+val_size: 0.025
 per_device_eval_batch_size: 1
 eval_strategy: steps
-eval_steps: 100
+eval_steps: 20
 
 # wandb
 report_to: wandb
-run_name: mistral3_instruct_dpo_full # optional
+run_name: mistral3_instruct_dpo_full_3
