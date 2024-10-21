@@ -19,7 +19,7 @@ preprocessing_num_workers: 16
 ### output
 output_dir: /data/wyett/trained/llama_3_instruct/full/dpo/10/
 logging_steps: 2
-# save_steps: 350
+save_steps: 150
 plot_loss: true
 overwrite_output_dir: true
 

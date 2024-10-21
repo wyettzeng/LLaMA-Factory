@@ -19,7 +19,7 @@ preprocessing_num_workers: 16
 ### output
 output_dir: saves/llama_3_instruct/lora/dpo
 logging_steps: 2
-save_steps: 300
+save_steps: 150
 plot_loss: true
 overwrite_output_dir: true
 
