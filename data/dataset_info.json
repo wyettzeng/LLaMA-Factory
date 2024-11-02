@@ -1,6 +1,6 @@
 {
-  "evol_dpo": {
-    "file_name": "evol_llama_factory_dpo.json",
+  "qwen_coder_2.5_0": {
+    "file_name": "qwen_coder_2.5_0.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -9,8 +9,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_llama3_instruct_1": {
-    "file_name": "evol_llama3_instruct_1.json",
+  "qwen_coder_2.5_1": {
+    "file_name": "qwen_coder_2.5_1.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -19,8 +19,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_llama3_instruct_3": {
-    "file_name": "evol_llama3_instruct_3.json",
+  "qwen_coder_2.5_30": {
+    "file_name": "qwen_coder_2.5_30.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -29,8 +29,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_llama3_instruct_5": {
-    "file_name": "evol_llama3_instruct_5.json",
+  "llama3_instruct_0": {
+    "file_name": "llama3_instruct_0.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -39,8 +39,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_llama3_instruct_10": {
-    "file_name": "evol_llama3_instruct_10.json",
+  "llama3_instruct_1": {
+    "file_name": "llama3_instruct_1.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -49,8 +49,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_llama3_instruct_40": {
-    "file_name": "evol_llama3_instruct_40.json",
+  "llama3_instruct_30": {
+    "file_name": "llama3_instruct_30.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -59,8 +59,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_mistral3_instruct_1": {
-    "file_name": "evol_mistral_instruct_v3_1.json",
+  "code_qwen_v1.5_0": {
+    "file_name": "code_qwen_v1.5_0.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -69,8 +69,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_mistral3_instruct_3": {
-    "file_name": "evol_mistral_instruct_v3_3.json",
+  "code_qwen_v1.5_1": {
+    "file_name": "code_qwen_v1.5_1.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -79,28 +79,8 @@
       "rejected": "rejected"
     }
   },
-  "evol_mistral3_instruct_5": {
-    "file_name": "evol_mistral_instruct_v3_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "evol_mistral3_instruct_10": {
-    "file_name": "evol_mistral_instruct_v3_10.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "evol_mistral3_instruct_40": {
-    "file_name": "evol_mistral_instruct_v3_40.json",
+  "code_qwen_v1.5_30": {
+    "file_name": "code_qwen_v1.5_30.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",

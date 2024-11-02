@@ -1,5 +1,8 @@
 # Custom dataset
-data/evol*
+data/code_qwen*
+data/llama*
+data/qwen_coder*
+
 
 # models
 models/*

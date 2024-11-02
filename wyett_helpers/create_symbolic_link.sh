@@ -1,12 +1,17 @@
 #!/bin/bash
-models=("mistral_instruct_v3"
-    "llama3_instruct")
-return_sizes=(1 3 5 10 40)
+models=(
+    # "mistral_instruct_v3"
+    "llama3_instruct"
+    "qwen_coder_2.5"
+    "code_qwen_v1.5"
+)
+
+return_sizes=(0 1 30)
 
 for model_name in "${models[@]}"
 do
     for return_size in "${return_sizes[@]}"
     do
-        ln -s ~/CodeDPO/generated_datasets/evol_llama_factory_dpo_${model_name}_${return_size}.json ~/LLaMA-Factory/data/evol_${model_name}_${return_size}.json
+        ln -s /data/code_llm/CodeDPO/generated_datasets/dpo_${model_name}_${return_size}.json ./data/${model_name}_${return_size}.json
     done
 done
