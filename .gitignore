@@ -2,7 +2,7 @@
 data/code_qwen*
 data/llama*
 data/qwen_coder*
-
+data/evol*
 
 # models
 models/*
