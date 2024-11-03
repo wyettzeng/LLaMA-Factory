@@ -1,6 +1,6 @@
 {
   "qwen_coder_2.5_0": {
-    "file_name": "qwen_coder_2.5_0.json",
+    "file_name": "dpo_qwen_coder_2.5_0.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -10,7 +10,7 @@
     }
   },
   "qwen_coder_2.5_1": {
-    "file_name": "qwen_coder_2.5_1.json",
+    "file_name": "dpo_qwen_coder_2.5_1.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -20,7 +20,7 @@
     }
   },
   "qwen_coder_2.5_30": {
-    "file_name": "qwen_coder_2.5_30.json",
+    "file_name": "dpo_qwen_coder_2.5_30.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -30,7 +30,7 @@
     }
   },
   "llama3_instruct_0": {
-    "file_name": "llama3_instruct_0.json",
+    "file_name": "dpo_llama3_instruct_0.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -40,7 +40,7 @@
     }
   },
   "llama3_instruct_1": {
-    "file_name": "llama3_instruct_1.json",
+    "file_name": "dpo_llama3_instruct_1.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -50,7 +50,7 @@
     }
   },
   "llama3_instruct_30": {
-    "file_name": "llama3_instruct_30.json",
+    "file_name": "dpo_llama3_instruct_30.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -60,7 +60,7 @@
     }
   },
   "code_qwen_v1.5_0": {
-    "file_name": "code_qwen_v1.5_0.json",
+    "file_name": "dpo_code_qwen_v1.5_0.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -70,7 +70,7 @@
     }
   },
   "code_qwen_v1.5_1": {
-    "file_name": "code_qwen_v1.5_1.json",
+    "file_name": "dpo_code_qwen_v1.5_1.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -80,7 +80,7 @@
     }
   },
   "code_qwen_v1.5_30": {
-    "file_name": "code_qwen_v1.5_30.json",
+    "file_name": "dpo_code_qwen_v1.5_30.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",

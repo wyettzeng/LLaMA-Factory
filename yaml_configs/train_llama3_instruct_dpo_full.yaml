@@ -10,16 +10,16 @@ pref_beta: 0.01
 pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: llama3_instruct_30
+dataset: llama3_instruct_1
 template: llama3
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: /data/code_llm/trained/llama_3_instruct/full/dpo/30/
+output_dir: /data/code_llm/trained/llama_3_instruct/full/dpo/1/
 logging_steps: 2
-save_steps: 150
+save_steps: 1000
 plot_loss: true
 overwrite_output_dir: true
 
@@ -41,4 +41,4 @@ eval_steps: 25
 
 # wandb
 report_to: wandb
-run_name: llama3_instruct_dpo_full_30 # optional
+run_name: llama3_instruct_dpo_full_1 # optional
