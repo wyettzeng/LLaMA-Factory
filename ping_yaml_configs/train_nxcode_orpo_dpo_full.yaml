@@ -1,16 +1,16 @@
 ### model
-model_name_or_path: Qwen/Qwen2.5-Coder-7B-Instruct
+model_name_or_path: NTQAI/Nxcode-CQ-7B-orpo
 
 ### method
 stage: dpo
 do_train: true
 finetuning_type: full
-deepspeed: yaml_configs/ds_z3_config.json
+deepspeed: yaml_configs/ds_z2_config.json
 pref_beta: 0.01
 pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: qwen_coder_2.5_0
+dataset: nxcode_orpo_0
 template: qwen
 cutoff_len: 2048
 overwrite_cache: true
