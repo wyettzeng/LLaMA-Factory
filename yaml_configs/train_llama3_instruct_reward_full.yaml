@@ -8,7 +8,7 @@ finetuning_type: full
 deepspeed: yaml_configs/ds_z3_config.json
 
 ### dataset
-dataset: evol_llama3_instruct_1
+dataset: llama3_instruct_1
 template: llama3
 cutoff_len: 2048
 overwrite_cache: true
