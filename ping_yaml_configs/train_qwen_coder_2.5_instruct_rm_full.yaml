@@ -5,7 +5,7 @@ model_name_or_path: Qwen/Qwen2.5-Coder-7B-Instruct
 stage: rm
 do_train: true
 finetuning_type: full
-deepspeed: yaml_configs/ds_z2_config.json
+deepspeed: yaml_configs/ds_z3_config.json
 
 ### dataset
 dataset: qwen_coder_2.5_0
@@ -16,10 +16,11 @@ preprocessing_num_workers: 16
 
 ### output
 output_dir: /data/code_llm/trained/qwen_coder_2.5/full/rm/0/
-logging_steps: 2
+logging_steps: 10
 save_steps: 2500
 plot_loss: true
 overwrite_output_dir: true
+stage: rm
 
 ### train
 per_device_train_batch_size: 2
