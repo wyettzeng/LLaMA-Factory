@@ -1,34 +1,4 @@
 {
-  "mistral_v3_0": {
-    "file_name": "dpo_mistral_instruct_v3_0.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "mistral_v3_1": {
-    "file_name": "dpo_mistral_instruct_v3_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "mistral_v3_30": {
-    "file_name": "dpo_mistral_instruct_v3_30.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
   "nxcode_orpo_0": {
     "file_name": "dpo_nxcode_cq_orpo_0.json",
     "ranking": true,
@@ -59,8 +29,8 @@
       "rejected": "rejected"
     }
   },
-  "qwen_coder_2.5_0": {
-    "file_name": "dpo_qwen_coder_2.5_0.json",
+  "qwen_coder_2.5_inf": {
+    "file_name": "dpo_qwen_coder_2.5_inf.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -79,8 +49,8 @@
       "rejected": "rejected"
     }
   },
-  "qwen_coder_2.5_30": {
-    "file_name": "dpo_qwen_coder_2.5_30.json",
+  "qwen_coder_2.5_5": {
+    "file_name": "dpo_qwen_coder_2.5_5.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",

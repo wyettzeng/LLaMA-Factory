@@ -10,22 +10,22 @@ pref_beta: 0.01
 pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: qwen_coder_2.5_0
+dataset: qwen_coder_2.5_inf
 template: qwen
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: /data/code_llm/trained/qwen_coder_2.5/full/dpo/0/
+output_dir: /data/code_llm/trained/qwen_coder_2.5/full/dpo/inf/
 logging_steps: 2
-save_steps: 2000
+save_steps: 2500
 plot_loss: true
 overwrite_output_dir: true
 
 ### train
-per_device_train_batch_size: 2
-gradient_accumulation_steps: 8
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
 learning_rate: 5.0e-7
 num_train_epochs: 1.0
 lr_scheduler_type: cosine
@@ -35,10 +35,10 @@ ddp_timeout: 480000000
 
 ### eval
 val_size: 0.005
-per_device_eval_batch_size: 2
+per_device_eval_batch_size: 4
 eval_strategy: steps
 eval_steps: 200
 
 # wandb
 report_to: wandb
-run_name: qwen_coder_2.5_dpo_full_0 # optional
+run_name: qwen_coder_2.5_dpo_full_inf # optional

@@ -1,13 +1,13 @@
 #!/bin/bash
 models=(
-    "mistral_instruct_v3"
+    # "mistral_instruct_v3"
     # "llama3_instruct"
-    # "qwen_coder_2.5"
+    "qwen_coder_2.5"
     # "code_qwen_v1.5"
-    "nxcode_cq_orpo"
+    # "nxcode_cq_orpo"
 )
 
-return_sizes=(0 1 30)
+return_sizes=("inf" "1" "5")
 
 for model_name in "${models[@]}"
 do
