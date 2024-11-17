@@ -1,6 +1,6 @@
 {
-  "nxcode_orpo_0": {
-    "file_name": "dpo_nxcode_cq_orpo_0.json",
+  "nxcode_orpo_inf": {
+    "file_name": "dpo_nxcode_cq_orpo_inf.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -19,8 +19,8 @@
       "rejected": "rejected"
     }
   },
-  "nxcode_orpo_30": {
-    "file_name": "dpo_nxcode_cq_orpo_30.json",
+  "nxcode_orpo_5": {
+    "file_name": "dpo_nxcode_cq_orpo_5.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -59,8 +59,8 @@
       "rejected": "rejected"
     }
   },
-  "llama3_instruct_0": {
-    "file_name": "dpo_llama3_instruct_0.json",
+  "llama3_instruct_inf": {
+    "file_name": "dpo_llama3_instruct_inf.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -79,8 +79,8 @@
       "rejected": "rejected"
     }
   },
-  "llama3_instruct_30": {
-    "file_name": "dpo_llama3_instruct_30.json",
+  "llama3_instruct_5": {
+    "file_name": "dpo_llama3_instruct_5.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -89,8 +89,8 @@
       "rejected": "rejected"
     }
   },
-  "code_qwen_v1.5_0": {
-    "file_name": "dpo_code_qwen_v1.5_0.json",
+  "code_qwen_v1.5_inf": {
+    "file_name": "dpo_code_qwen_v1.5_inf.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
@@ -109,8 +109,8 @@
       "rejected": "rejected"
     }
   },
-  "code_qwen_v1.5_30": {
-    "file_name": "dpo_code_qwen_v1.5_30.json",
+  "code_qwen_v1.5_5": {
+    "file_name": "dpo_code_qwen_v1.5_5.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",
