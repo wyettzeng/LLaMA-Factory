@@ -8,14 +8,14 @@ finetuning_type: full
 deepspeed: yaml_configs/ds_z3_config.json
 
 ### dataset
-dataset: qwen_coder_2.5_1
+dataset: qwen_coder_2.5_4
 template: qwen
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: /data/code_llm/trained/qwen_coder_2.5/full/rm/1/
+output_dir: /data/code_llm/trained/qwen_coder_2.5/full/rm/4/
 logging_steps: 10
 save_steps: 2500
 plot_loss: true
@@ -40,4 +40,4 @@ eval_steps: 200
 
 # wandb
 report_to: wandb
-run_name: qwen_coder_2.5_rm_full_1 # optional
+run_name: qwen_coder_2.5_rm_full_4 # optional

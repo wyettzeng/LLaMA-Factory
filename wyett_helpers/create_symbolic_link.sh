@@ -7,7 +7,12 @@ models=(
     "nxcode_cq_orpo"
 )
 
-return_sizes=("inf" "1" "5")
+return_sizes=(
+    "inf"
+    "1"
+    "4"
+    "5"
+)
 
 for model_name in "${models[@]}"
 do
