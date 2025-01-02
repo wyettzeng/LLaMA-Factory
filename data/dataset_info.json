@@ -19,6 +19,16 @@
       "rejected": "rejected"
     }
   },
+  "cross_models_5": {
+    "file_name": "dpo_cross_models_5.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "nxcode_orpo_inf": {
     "file_name": "dpo_nxcode_cq_orpo_inf.json",
     "ranking": true,
@@ -131,6 +141,46 @@
   },
   "llama3_instruct_5": {
     "file_name": "dpo_llama3_instruct_5.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "llama3.1_instruct_1": {
+    "file_name": "dpo_llama3.1_instruct_1.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "llama3.1_instruct_4": {
+    "file_name": "dpo_llama3.1_instruct_4.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "llama3.1_instruct_5": {
+    "file_name": "dpo_llama3.1_instruct_5.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "llama3.1_instruct_inf": {
+    "file_name": "dpo_llama3.1_instruct_inf.json",
     "ranking": true,
     "columns": {
       "prompt": "instruction",

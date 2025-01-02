@@ -2,6 +2,7 @@
 models=(
     "mistral_instruct_v3"
     "llama3_instruct"
+    "llama3.1_instruct"
     "qwen_coder_2.5"
     "code_qwen_v1.5"
     "nxcode_cq_orpo"
