@@ -109,6 +109,46 @@
       "rejected": "rejected"
     }
   },
+  "qwen_coder_2.5_32b_inf": {
+    "file_name": "dpo_qwen_coder_2.5_32b_inf.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "qwen_coder_2.5_32b_1": {
+    "file_name": "dpo_qwen_coder_2.5_32b_1.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "qwen_coder_2.5_32b_4": {
+    "file_name": "dpo_qwen_coder_2.5_32b_4.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "qwen_coder_2.5_32b_5": {
+    "file_name": "dpo_qwen_coder_2.5_32b_5.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "llama3_instruct_inf": {
     "file_name": "dpo_llama3_instruct_inf.json",
     "ranking": true,

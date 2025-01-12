@@ -4,6 +4,7 @@ models=(
     "llama3_instruct"
     "llama3.1_instruct"
     "qwen_coder_2.5"
+    "qwen_coder_2.5_32b"
     "code_qwen_v1.5"
     "nxcode_cq_orpo"
     "cross_models"

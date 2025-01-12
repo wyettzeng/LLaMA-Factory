@@ -5,6 +5,9 @@ data/qwen_coder*
 data/evol*
 data/dpo*
 
+# trained models
+trained_models/*
+
 # models
 models/*
 
