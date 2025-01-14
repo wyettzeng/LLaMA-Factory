@@ -19,9 +19,10 @@ from subprocess import Popen, TimeoutExpired
 from typing import TYPE_CHECKING, Any, Dict, Generator, Optional
 
 from transformers.trainer import TRAINING_ARGS_NAME
+from transformers.utils import is_torch_npu_available
 
 from ..extras.constants import LLAMABOARD_CONFIG, PEFT_METHODS, TRAINING_STAGES
-from ..extras.misc import is_gpu_or_npu_available, torch_gc
+from ..extras.misc import is_gpu_or_npu_available, torch_gc, use_ray
 from ..extras.packages import is_gradio_available, is_transformers_version_equal_to_4_46
 from .common import DEFAULT_CACHE_DIR, DEFAULT_CONFIG_DIR, QUANTIZATION_BITS, get_save_dir, load_config
 from .locales import ALERTS, LOCALES
@@ -172,6 +173,7 @@ class Runner:
         if get("top.quantization_bit") in QUANTIZATION_BITS:
             args["quantization_bit"] = int(get("top.quantization_bit"))
             args["quantization_method"] = get("top.quantization_method")
+            args["double_quantization"] = not is_torch_npu_available()
 
         # freeze config
         if args["finetuning_type"] == "freeze":
@@ -394,12 +396,12 @@ class Runner:
                 continue
 
         if self.do_train:
-            if os.path.exists(os.path.join(output_path, TRAINING_ARGS_NAME)):
+            if os.path.exists(os.path.join(output_path, TRAINING_ARGS_NAME)) or use_ray():
                 finish_info = ALERTS["info_finished"][lang]
             else:
                 finish_info = ALERTS["err_failed"][lang]
         else:
-            if os.path.exists(os.path.join(output_path, "all_results.json")):
+            if os.path.exists(os.path.join(output_path, "all_results.json")) or use_ray():
                 finish_info = get_eval_results(os.path.join(output_path, "all_results.json"))
             else:
                 finish_info = ALERTS["err_failed"][lang]

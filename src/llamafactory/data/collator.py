@@ -101,11 +101,16 @@ class MultiModalDataCollatorForSeq2Seq(DataCollatorForSeq2Seq):
             batch_vidlens.append(len(videos))
             batch_input_ids.append(feature["input_ids"])
 
-        if self.processor is not None and sum(batch_imglens) == 0:  # avoid process hanging in zero3/fsdp case
+        if (
+            self.processor is not None and sum(batch_imglens) == 0 and sum(batch_vidlens) == 0
+        ):  # avoid process hanging in zero3/fsdp case
             fake_messages = [{"role": "user", "content": IMAGE_PLACEHOLDER}]
             fake_images = [Image.new("RGB", (64, 64), (255, 255, 255))]
             fake_messages = self.template.mm_plugin.process_messages(fake_messages, fake_images, [], self.processor)
-            fake_input_ids = self.processor.tokenizer.encode(fake_messages[0]["content"], add_special_tokens=False)
+            fake_input_ids = self.tokenizer.encode(fake_messages[0]["content"], add_special_tokens=False)
+            fake_input_ids, _ = self.template.mm_plugin.process_token_ids(
+                fake_input_ids, None, fake_images, [], self.tokenizer, self.processor
+            )
             if self.tokenizer.padding_side == "right":
                 features[0]["input_ids"] = features[0]["input_ids"] + fake_input_ids
                 features[0]["attention_mask"] = features[0]["attention_mask"] + [0] * len(fake_input_ids)
@@ -116,6 +121,7 @@ class MultiModalDataCollatorForSeq2Seq(DataCollatorForSeq2Seq):
                 features[0]["labels"] = [IGNORE_INDEX] * len(fake_input_ids) + features[0]["labels"]
 
             batch_images = fake_images
+            batch_imglens[0] = 1
             batch_input_ids[0] = features[0]["input_ids"]
 
         mm_inputs = self.template.mm_plugin.get_mm_inputs(
@@ -146,6 +152,11 @@ class MultiModalDataCollatorForSeq2Seq(DataCollatorForSeq2Seq):
         if isinstance(features.get("pixel_values"), list):  # for pixtral inputs
             features = features.data  # use default_collate() instead of BatchEncoding.to()
 
+        if "image_bound" in features:  # for minicpmv inputs
+            bsz, seq_length = features["input_ids"].shape
+            features["position_ids"] = torch.arange(seq_length).long().repeat(bsz, 1)
+            return {"data": features, "labels": features["labels"]}
+
         return features
 
 
@@ -163,6 +174,10 @@ class SFTDataCollatorWith4DAttentionMask(MultiModalDataCollatorForSeq2Seq):
         features = super().__call__(features)
         if self.block_diag_attn and self.attn_implementation != "flash_attention_2":
             features["attention_mask"] = prepare_4d_attention_mask(features["attention_mask"], self.compute_dtype)
+
+        for key, value in features.items():  # cast data dtype for paligemma
+            if torch.is_tensor(value) and torch.is_floating_point(value):
+                features[key] = value.to(self.compute_dtype)
 
         return features
 
