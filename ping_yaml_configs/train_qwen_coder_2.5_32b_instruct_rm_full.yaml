@@ -17,7 +17,7 @@ preprocessing_num_workers: 16
 ### output
 output_dir: /data/code_llm/trained/qwen_coder_2.5_32b/full/rm/inf/
 logging_steps: 10
-save_steps: 10000
+save_steps: 100
 plot_loss: true
 overwrite_output_dir: true
 stage: rm
@@ -34,9 +34,9 @@ ddp_timeout: 480000000
 
 ### eval
 val_size: 0.005
-per_device_eval_batch_size: 4
+per_device_eval_batch_size: 1
 eval_strategy: steps
-eval_steps: 200
+eval_steps: 50
 
 # wandb
 report_to: wandb
