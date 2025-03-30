@@ -1,4 +1,17 @@
 {
+  "acecoder_pair_300k": {
+    "hf_hub_url": "TIGER-Lab/AceCodePair-300K",
+    "subset": "default",
+    "split": "train",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "cross_models_inf": {
     "file_name": "dpo_cross_models_inf.json",
     "ranking": true,
