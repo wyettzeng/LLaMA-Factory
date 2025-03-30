@@ -98,7 +98,7 @@ FORCE_TORCHRUN=1 llamafactory-cli train examples/train_lora/llama3_lora_sft_ds3.
 #### Supervised Fine-Tuning with Ray on 4 GPUs
 
 ```bash
-USE_RAY=1 llamafactory-cli train examples/train_full/llama3_lora_sft_ray.yaml
+USE_RAY=1 llamafactory-cli train examples/train_lora/llama3_lora_sft_ray.yaml
 ```
 
 ### QLoRA Fine-Tuning
@@ -170,6 +170,12 @@ llamafactory-cli export examples/merge_lora/llama3_lora_sft.yaml
 llamafactory-cli export examples/merge_lora/llama3_gptq.yaml
 ```
 
+### Save Ollama modelfile
+
+```bash
+llamafactory-cli export examples/merge_lora/llama3_full_sft.yaml
+```
+
 ### Inferring LoRA Fine-Tuned Models
 
 #### Batch Generation using vLLM Tensor Parallel
@@ -202,6 +208,12 @@ llamafactory-cli api examples/inference/llama3_lora_sft.yaml
 
 ```bash
 llamafactory-cli train examples/extras/galore/llama3_full_sft.yaml
+```
+
+#### Full-Parameter Fine-Tuning using APOLLO
+
+```bash
+llamafactory-cli train examples/extras/apollo/llama3_full_sft.yaml
 ```
 
 #### Full-Parameter Fine-Tuning using BAdam

@@ -1,290 +1,4 @@
 {
-  "acecoder_pair_300k": {
-    "hf_hub_url": "TIGER-Lab/AceCodePair-300K",
-    "subset": "default",
-    "split": "train",
-    "ranking": true,
-    "formatting": "sharegpt",
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "cross_models_inf": {
-    "file_name": "dpo_cross_models_inf.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "cross_models_1": {
-    "file_name": "dpo_cross_models_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "cross_models_5": {
-    "file_name": "dpo_cross_models_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "nxcode_orpo_inf": {
-    "file_name": "dpo_nxcode_cq_orpo_inf.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "nxcode_orpo_1": {
-    "file_name": "dpo_nxcode_cq_orpo_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "nxcode_orpo_4": {
-    "file_name": "dpo_nxcode_cq_orpo_4.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "nxcode_orpo_5": {
-    "file_name": "dpo_nxcode_cq_orpo_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_inf": {
-    "file_name": "dpo_qwen_coder_2.5_inf.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_1": {
-    "file_name": "dpo_qwen_coder_2.5_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_4": {
-    "file_name": "dpo_qwen_coder_2.5_4.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_5": {
-    "file_name": "dpo_qwen_coder_2.5_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_32b_inf": {
-    "file_name": "dpo_qwen_coder_2.5_32b_inf.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_32b_1": {
-    "file_name": "dpo_qwen_coder_2.5_32b_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_32b_4": {
-    "file_name": "dpo_qwen_coder_2.5_32b_4.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "qwen_coder_2.5_32b_5": {
-    "file_name": "dpo_qwen_coder_2.5_32b_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3_instruct_inf": {
-    "file_name": "dpo_llama3_instruct_inf.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3_instruct_1": {
-    "file_name": "dpo_llama3_instruct_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3_instruct_4": {
-    "file_name": "dpo_llama3_instruct_4.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3_instruct_5": {
-    "file_name": "dpo_llama3_instruct_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3.1_instruct_1": {
-    "file_name": "dpo_llama3.1_instruct_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3.1_instruct_4": {
-    "file_name": "dpo_llama3.1_instruct_4.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3.1_instruct_5": {
-    "file_name": "dpo_llama3.1_instruct_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "llama3.1_instruct_inf": {
-    "file_name": "dpo_llama3.1_instruct_inf.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "code_qwen_v1.5_inf": {
-    "file_name": "dpo_code_qwen_v1.5_inf.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "code_qwen_v1.5_1": {
-    "file_name": "dpo_code_qwen_v1.5_1.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "code_qwen_v1.5_4": {
-    "file_name": "dpo_code_qwen_v1.5_4.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "code_qwen_v1.5_5": {
-    "file_name": "dpo_code_qwen_v1.5_5.json",
-    "ranking": true,
-    "columns": {
-      "prompt": "instruction",
-      "query": "input",
-      "chosen": "chosen",
-      "rejected": "rejected"
-    }
-  },
-  "evol_sft": {
-    "file_name": "evol_llama_factory_sft.json"
-  },
   "identity": {
     "file_name": "identity.json"
   },
@@ -316,6 +30,20 @@
     "columns": {
       "messages": "messages",
       "images": "images"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant"
+    }
+  },
+  "mllm_audio_demo": {
+    "file_name": "mllm_audio_demo.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "audios": "audios"
     },
     "tags": {
       "role_tag": "role",
@@ -504,6 +232,7 @@
   "ultrachat_200k": {
     "hf_hub_url": "HuggingFaceH4/ultrachat_200k",
     "ms_hub_url": "AI-ModelScope/ultrachat_200k",
+    "split": "train_sft",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -589,6 +318,38 @@
       "prompt": "prompt",
       "response": "response"
     }
+  },
+  "open_thoughts": {
+    "hf_hub_url": "llamafactory/OpenThoughts-114k",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
+  "open_r1_math": {
+    "hf_hub_url": "llamafactory/OpenR1-Math-94k",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
+  "chinese_r1_distill": {
+    "hf_hub_url": "Congliu/Chinese-DeepSeek-R1-Distill-data-110k-SFT",
+    "ms_hub_url": "liucong/Chinese-DeepSeek-R1-Distill-data-110k-SFT"
   },
   "llava_1k_en": {
     "hf_hub_url": "BUAADreamer/llava-en-zh-2k",

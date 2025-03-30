@@ -1,4 +1,4 @@
-# Copyright 2024 the LlamaFactory team.
+# Copyright 2025 the LlamaFactory team.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,10 +18,13 @@ import json
 import os
 import re
 import uuid
-from typing import TYPE_CHECKING, AsyncGenerator, Dict, List, Optional, Tuple
+from collections.abc import AsyncGenerator
+from typing import TYPE_CHECKING, Optional
 
 from ..data import Role as DataRole
 from ..extras import logging
+from ..extras.constants import IMAGE_PLACEHOLDER
+from ..extras.misc import is_env_enabled
 from ..extras.packages import is_fastapi_available, is_pillow_available, is_requests_available
 from .common import dictify, jsonify
 from .protocol import (
@@ -69,8 +72,9 @@ ROLE_MAPPING = {
 
 def _process_request(
     request: "ChatCompletionRequest",
-) -> Tuple[List[Dict[str, str]], Optional[str], Optional[str], Optional[List["ImageInput"]]]:
-    logger.info_rank0(f"==== request ====\n{json.dumps(dictify(request), indent=2, ensure_ascii=False)}")
+) -> tuple[list[dict[str, str]], Optional[str], Optional[str], Optional[list["ImageInput"]]]:
+    if is_env_enabled("API_VERBOSE", "1"):
+        logger.info_rank0(f"==== request ====\n{json.dumps(dictify(request), indent=2, ensure_ascii=False)}")
 
     if len(request.messages) == 0:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid length")
@@ -99,10 +103,12 @@ def _process_request(
             content = json.dumps(tool_calls, ensure_ascii=False)
             input_messages.append({"role": ROLE_MAPPING[Role.FUNCTION], "content": content})
         elif isinstance(message.content, list):
+            text_content = ""
             for input_item in message.content:
                 if input_item.type == "text":
-                    input_messages.append({"role": ROLE_MAPPING[message.role], "content": input_item.text})
+                    text_content += input_item.text
                 else:
+                    text_content += IMAGE_PLACEHOLDER
                     image_url = input_item.image_url.url
                     if re.match(r"^data:image\/(png|jpg|jpeg|gif|bmp);base64,(.+)$", image_url):  # base64 image
                         image_stream = io.BytesIO(base64.b64decode(image_url.split(",", maxsplit=1)[1]))
@@ -112,6 +118,8 @@ def _process_request(
                         image_stream = requests.get(image_url, stream=True).raw
 
                     images.append(Image.open(image_stream).convert("RGB"))
+
+            input_messages.append({"role": ROLE_MAPPING[message.role], "content": text_content})
         else:
             input_messages.append({"role": ROLE_MAPPING[message.role], "content": message.content})
 

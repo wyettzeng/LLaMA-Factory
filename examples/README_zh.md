@@ -98,7 +98,7 @@ FORCE_TORCHRUN=1 llamafactory-cli train examples/train_lora/llama3_lora_sft_ds3.
 #### 使用 Ray 在 4 张 GPU 上微调
 
 ```bash
-USE_RAY=1 llamafactory-cli train examples/train_full/llama3_lora_sft_ray.yaml
+USE_RAY=1 llamafactory-cli train examples/train_lora/llama3_lora_sft_ray.yaml
 ```
 
 ### QLoRA 微调
@@ -170,6 +170,12 @@ llamafactory-cli export examples/merge_lora/llama3_lora_sft.yaml
 llamafactory-cli export examples/merge_lora/llama3_gptq.yaml
 ```
 
+### 保存 Ollama 配置文件
+
+```bash
+llamafactory-cli export examples/merge_lora/llama3_full_sft.yaml
+```
+
 ### 推理 LoRA 模型
 
 #### 使用 vLLM+TP 批量推理
@@ -202,6 +208,12 @@ llamafactory-cli api examples/inference/llama3_lora_sft.yaml
 
 ```bash
 llamafactory-cli train examples/extras/galore/llama3_full_sft.yaml
+```
+
+#### 使用 APOLLO 进行全参数训练
+
+```bash
+llamafactory-cli train examples/extras/apollo/llama3_full_sft.yaml
 ```
 
 #### 使用 BAdam 进行全参数训练

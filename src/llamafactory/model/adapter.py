@@ -1,4 +1,4 @@
-# Copyright 2024 the LlamaFactory team.
+# Copyright 2025 the LlamaFactory team.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -81,9 +81,8 @@ def _setup_freeze_tuning(
     if finetuning_args.use_llama_pro:
         if num_layers % finetuning_args.freeze_trainable_layers != 0:
             raise ValueError(
-                "`num_layers` {} should be divisible by `num_layer_trainable` {}.".format(
-                    num_layers, finetuning_args.freeze_trainable_layers
-                )
+                f"`num_layers` {num_layers} should be "
+                f"divisible by `num_layer_trainable` {finetuning_args.freeze_trainable_layers}."
             )
 
         stride = num_layers // finetuning_args.freeze_trainable_layers
@@ -178,7 +177,7 @@ def _setup_lora_tuning(
         }
 
         for adapter in adapter_to_merge:
-            model: "LoraModel" = PeftModel.from_pretrained(model, adapter, **init_kwargs)
+            model: LoraModel = PeftModel.from_pretrained(model, adapter, **init_kwargs)
             model = model.merge_and_unload()
 
         if len(adapter_to_merge) > 0:
@@ -201,7 +200,7 @@ def _setup_lora_tuning(
         if finetuning_args.use_llama_pro:
             target_modules = find_expanded_modules(model, target_modules, finetuning_args.freeze_trainable_layers)
 
-        target_modules = patch_target_modules(model.config, finetuning_args, target_modules)
+        target_modules = patch_target_modules(model, finetuning_args, target_modules)
 
         if (
             finetuning_args.use_dora
@@ -263,8 +262,7 @@ def init_adapter(
     finetuning_args: "FinetuningArguments",
     is_trainable: bool,
 ) -> "PreTrainedModel":
-    r"""
-    Initializes the adapters.
+    r"""Initialize the adapters.
 
     Support full-parameter, freeze and LoRA training.
 

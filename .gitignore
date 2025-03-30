@@ -1,16 +1,3 @@
-# Custom dataset
-data/code_qwen*
-data/llama*
-data/qwen_coder*
-data/evol*
-data/dpo*
-
-# trained models
-trained_models/*
-
-# models
-models/*
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -174,6 +161,9 @@ cython_debug/
 
 # vscode
 .vscode/
+
+# uv
+uv.lock
 
 # custom .gitignore
 ms_cache/
